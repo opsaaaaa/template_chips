@@ -12,4 +12,4 @@
 
 
 # workspaces and temp files for editors
-./*.code-workspace
+/**.code-workspace
