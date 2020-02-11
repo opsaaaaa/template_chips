@@ -19,7 +19,7 @@ module Chips
         return on_template do
           on_each_tenon do |key, content|
 
-            mortise( key ).replace( content )
+            mortise( key )&.replace( content )
           
           end      
         end

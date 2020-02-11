@@ -43,6 +43,23 @@ RSpec.describe Chips do
       
       expect( chips_output.gsub(white_space ,'') ).to eq( output_html.gsub(white_space,'') )
     end
+
+
+    it "it dose not fail with bad mortises" do
+      chips_output = Chips::Template::Processor.new(
+          template_html,
+          mortises: {
+              'title': '#bad-title',
+              'desc': '#bad-description'
+          },
+          tenons: {
+              'title': 'Hello World!',
+              'desc': 'lorem ipsum'
+          }
+      ).generate()
+      
+      expect( chips_output.gsub(white_space ,'') ).to eq( template_html.gsub(white_space,'') )
+    end
   end
 end
 
