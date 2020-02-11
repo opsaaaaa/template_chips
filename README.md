@@ -18,8 +18,80 @@ $ gem install template_chips
 
 ## Usage
 
-TODO: Write usage instructions here
 
+NOT IMPLEMENTED YET
+
+
+```html
+my_template_html
+...
+<div>
+    <h1>
+        <div id="title"></div>
+    </h1>
+
+    <p>
+        <div id="description"></div>   
+    </p>
+</div>
+```
+```ruby
+handling templates
+...
+my_template = TemplateChips::Template.new()
+
+my_template.html = my_template_html
+
+my_template.mortise( key: 'title' , css: '#title' ) 
+my_template.mortise( key: 'desc', css: '#description' )
+
+my_template.input_tag(...)
+my_template.form_tag(...)
+
+from = my_template.build_form()
+```
+```html
+form
+...
+<form ...>
+    <div>
+        <h1>
+            <input ...>
+        </h1>
+
+        <p>
+            <input ...>
+        </p>
+    </div>
+</form>
+```
+```ruby
+handling documents
+...
+my_doc = TemplateChips::Document.new()
+
+my_doc.template = my_template
+
+my_doc.tenon['title'] = "Hello World!"
+my_doc.tenon['desc'] = "lorem ipsum"
+
+my_doc.build
+
+output = my_doc.html 
+```
+```html
+output:
+...
+<div>
+    <h1>
+        Hello World!
+    </h1>
+
+    <p>
+        lorem ispum   
+    </p>
+</div>
+```
 ## Development
 
 TODO: Put something here
