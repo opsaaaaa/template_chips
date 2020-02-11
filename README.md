@@ -23,7 +23,7 @@ NOT IMPLEMENTED YET
 
 
 ```html
-my_template_html
+template_html
 ...
 <div>
     <h1>
@@ -36,48 +36,23 @@ my_template_html
 </div>
 ```
 ```ruby
-handling templates
+chips processor
 ...
-my_template = TemplateChips::Template.new()
-
-my_template.html = my_template_html
-
-my_template.mortise( key: 'title' , css: '#title' ) 
-my_template.mortise( key: 'desc', css: '#description' )
-
-my_template.input_tag(...)
-my_template.form_tag(...)
-
-from = my_template.build_form()
+output = Chips::Processor.new(
+    template_html,
+    mortises: {
+        'title': '#title',
+        'desc': '#description'
+    },
+    tenons: {
+        'title': 'Hello World!',
+        'desc': 'lorem ipsum'
+    }
+).generate()
 ```
+
 ```html
-form
-...
-<form ...>
-    <div>
-        <h1>
-            <input ...>
-        </h1>
-
-        <p>
-            <input ...>
-        </p>
-    </div>
-</form>
-```
-```ruby
-handling documents
-...
-my_doc = my_template.new_document()
-
-my_doc.tenon( key: 'title', content: "Hello World!" )
-my_doc.tenon( key: 'desc', content: "lorem ipsum" )
-
-output = my_doc.build_html()
-from = my_doc.build_form()
-```
-```html
-output:
+output
 ...
 <div>
     <h1>
