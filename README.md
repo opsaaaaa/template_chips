@@ -68,9 +68,7 @@ form
 ```ruby
 handling documents
 ...
-my_doc = TemplateChips::Document.new()
-
-my_doc.template = my_template
+my_doc = my_template.new_document()
 
 my_doc.tenon['title'] = "Hello World!"
 my_doc.tenon['desc'] = "lorem ipsum"
