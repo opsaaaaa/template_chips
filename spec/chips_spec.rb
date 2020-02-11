@@ -3,7 +3,7 @@ RSpec.describe Chips do
     expect(Chips::VERSION).not_to be nil
   end
 
-  context "Chips::Processor" do
+  context "Template::Processor" do
     let(:template_html) {'
       <div>
         <h1>
@@ -29,7 +29,7 @@ RSpec.describe Chips do
     '}
 
     it "can process a document" do
-      chips_output = Chips::Processor.new(
+      chips_output = Chips::Template::Processor.new(
           template_html,
           mortises: {
               'title': '#title',
