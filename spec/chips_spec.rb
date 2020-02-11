@@ -41,7 +41,7 @@ RSpec.describe Chips do
           }
       ).generate()
       
-      expect( chips_output.gsub(white_space ,'') ).to eq( output_html.gsub(white_space,'') )
+      expect( chips_output.clear_line_spacing ).to eq( output_html.clear_line_spacing )
     end
 
 
@@ -58,11 +58,8 @@ RSpec.describe Chips do
           }
       ).generate()
       
-      expect( chips_output.gsub(white_space ,'') ).to eq( template_html.gsub(white_space,'') )
+      expect( chips_output.clear_line_spacing ).to eq( template_html.clear_line_spacing )
     end
   end
 end
 
-def white_space
-  return /(^\s+|\s+$)/
-end
