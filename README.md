@@ -28,7 +28,7 @@ template_html
     </h1>
 
     <p>
-        <div id="description"></div>   
+        <span id="description"></span>   
     </p>
 </div>
 ```
