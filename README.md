@@ -75,10 +75,8 @@ my_doc.template = my_template
 my_doc.tenon['title'] = "Hello World!"
 my_doc.tenon['desc'] = "lorem ipsum"
 
-my_doc.build
-
-output = my_doc.html
-from = my_doc.form
+output = my_doc.build_html()
+from = my_doc.build_form()
 ```
 ```html
 output:
