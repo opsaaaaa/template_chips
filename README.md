@@ -70,8 +70,8 @@ handling documents
 ...
 my_doc = my_template.new_document()
 
-my_doc.tenon['title'] = "Hello World!"
-my_doc.tenon['desc'] = "lorem ipsum"
+my_doc.tenon( key: 'title', content: "Hello World!" )
+my_doc.tenon( key: 'desc', content: "lorem ipsum" )
 
 output = my_doc.build_html()
 from = my_doc.build_form()
