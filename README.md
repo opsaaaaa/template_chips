@@ -77,7 +77,8 @@ my_doc.tenon['desc'] = "lorem ipsum"
 
 my_doc.build
 
-output = my_doc.html 
+output = my_doc.html
+from = my_doc.form
 ```
 ```html
 output:
