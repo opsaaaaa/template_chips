@@ -35,7 +35,7 @@ template_html
 ```ruby
 chips processor
 ...
-output = Chips::Processor.new(
+output = Chips::Template::Processor.new(
     template_html,
     mortises: {
         'title': '#title',
