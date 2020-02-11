@@ -45,7 +45,7 @@ RSpec.describe Chips do
     end
 
 
-    it "it dose not fail with bad mortises" do
+    it "dose not fail with bad mortises" do
       chips_output = Chips::Template::Processor.new(
           template_html,
           mortises: {
