@@ -19,9 +19,6 @@ $ gem install template_chips
 ## Usage
 
 
-NOT IMPLEMENTED YET
-
-
 ```html
 template_html
 ...
