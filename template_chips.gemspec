@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "template_chips/version"
+require "chips/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "template_chips"
-  spec.version       = TemplateChips::VERSION
+  spec.version       = Chips::VERSION
   spec.authors       = ["opsaaaaa"]
   spec.email         = ["sean@ferney.org"]
 
