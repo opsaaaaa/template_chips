@@ -18,17 +18,19 @@ module Chips
       def generate
         return on_template do
           on_each_tenon do |key, content|
-
-            mortise( key )&.replace( content )
-          
+            on_each_mortise_element( key ) do |mortise| 
+              mortise&.replace( content )
+            end
           end      
         end
       end
 
       private
 
-      def mortise key
-        return @page.css( self.mortises[key] ).first
+      def on_each_mortise_element key, &block
+        @page.css( self.mortises[key] ).each do |mortise_element|
+          block.call mortise_element
+        end
       end
 
       def on_each_tenon &block
