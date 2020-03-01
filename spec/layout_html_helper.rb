@@ -11,16 +11,16 @@ class FakeChip
       paragraph[:id] ||= ''
       paragraph[:content] ||= ''
       return ('
-          <div>
-            <h1 id="'+heading[:id]+'">
-              '+heading[:content]+'
-            </h1>
+        <div>
+          <h1 id="'+heading[:id]+'">
+            '+heading[:content]+'
+          </h1>
 
-            <p id="'+paragraph[:id]+'">
-              '+paragraph[:content]+'
-            </p>
-          </div>          
-        ').clear_line_spacing
+          <p id="'+paragraph[:id]+'">
+            '+paragraph[:content]+'
+          </p>
+        </div>          
+      ').clear_line_spacing
     end
     
     def self.template 

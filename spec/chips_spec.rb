@@ -10,15 +10,15 @@ RSpec.describe Chips do
 
     it "can process a document" do
       chips_output = Chips::Template::Processor.new(
-          template_html,
-          mortises: {
-              'title': '#title',
-              'desc': '#description'
-          },
-          tenons: {
-              'title': 'Hello World!',
-              'desc': 'lorem ipsum'
-          }
+        template_html,
+        mortises: {
+            'title': '#title',
+            'desc': '#description'
+        },
+        tenons: {
+            'title': 'Hello World!',
+            'desc': 'lorem ipsum'
+        }
       ).generate()
       
       expect( chips_output.clear_line_spacing ).to eq( output_html )
@@ -27,15 +27,15 @@ RSpec.describe Chips do
 
     it "dose not fail with bad mortises" do
       chips_output = Chips::Template::Processor.new(
-          template_html,
-          mortises: {
-              'title': '#bad-title',
-              'desc': '#bad-description'
-          },
-          tenons: {
-              'title': 'Hello World!',
-              'desc': 'lorem ipsum'
-          }
+        template_html,
+        mortises: {
+            'title': '#bad-title',
+            'desc': '#bad-description'
+        },
+        tenons: {
+            'title': 'Hello World!',
+            'desc': 'lorem ipsum'
+        }
       ).generate()
       
       expect( chips_output.clear_line_spacing ).to eq( template_html )
