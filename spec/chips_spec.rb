@@ -4,29 +4,9 @@ RSpec.describe Chips do
   end
 
   context "Template::Processor" do
-    let(:template_html) {'
-      <div>
-        <h1>
-          <div id="title"></div>
-        </h1>
+    let(:template_html) { FakeChip::Basic.template }
 
-        <p>
-          <span id="description"></span>   
-        </p>
-      </div>    
-    '}
-
-    let(:output_html) {'
-      <div>
-        <h1>
-          Hello World!
-        </h1>
-
-        <p>
-          lorem ipsum
-        </p>
-      </div>
-    '}
+    let(:output_html) { FakeChip::Basic.document }
 
     it "can process a document" do
       chips_output = Chips::Template::Processor.new(
@@ -41,7 +21,7 @@ RSpec.describe Chips do
           }
       ).generate()
       
-      expect( chips_output.clear_line_spacing ).to eq( output_html.clear_line_spacing )
+      expect( chips_output.clear_line_spacing ).to eq( output_html )
     end
 
 
@@ -58,7 +38,7 @@ RSpec.describe Chips do
           }
       ).generate()
       
-      expect( chips_output.clear_line_spacing ).to eq( template_html.clear_line_spacing )
+      expect( chips_output.clear_line_spacing ).to eq( template_html )
     end
   end
 end

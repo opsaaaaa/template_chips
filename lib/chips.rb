@@ -19,7 +19,7 @@ module Chips
         return on_template do
           on_each_tenon do |key, content|
             on_each_mortise_element( key ) do |mortise| 
-              mortise&.replace( content )
+              mortise&.add_child( content )
             end
           end      
         end
