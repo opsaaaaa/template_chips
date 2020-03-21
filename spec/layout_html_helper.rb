@@ -32,13 +32,27 @@ class FakeChip
     end
 
     def self.mortises
+      return {
+        title: '#title',
+        desc: '#description'
+      }
+    end
+    
+    def self.tenons
+      return {
+        title: 'Hello World!',
+        desc: 'lorem ipsum'
+      }
+    end
+
+    def self.mortisesv2
       return [
         { key: 'title', css: '#title' },
         { key: 'desc', css: '#description' }
       ]
     end
 
-    def self.tenons
+    def self.tenonsv2
       return [
         { key: 'title', content: 'Hello World!' },
         { key: 'desc', content: 'lorem ipsum' }

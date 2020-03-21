@@ -1,10 +1,9 @@
 require "nokogiri"
-require "../chips_nokogiri"
 
 module Chips
   module Vue
     class Processor
-      include ChipsNokogiri
+      include Chips::Page
       attr_reader :template, :mortises, :tenons, :html
 
       def initialize html, mortises:, tenons:
@@ -32,12 +31,6 @@ module Chips
 
       def on_each_tenon &block
         self.tenons.each do |key,content_html|
-          block.call key, to_nokogiri( content_html )
-        end
-      end
-
-      def each_fragment
-        collection do |key,content_html|
           block.call key, to_nokogiri( content_html )
         end
       end

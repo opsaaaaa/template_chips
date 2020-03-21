@@ -1,6 +1,8 @@
 require "chips/version"
-require "chips/template/processor"
 require "nokogiri"
+require "chips/to_nokogiri"
+require "chips/page"
+require "chips/template/processor"
 
 
 module Chips
