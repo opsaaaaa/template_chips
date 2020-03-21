@@ -12,7 +12,7 @@ end
 
 class Hash
   def to_nokogiri
-    return self.map { |k, str| [k, str.to_nokogiri] }.to_h
+    return self.transform_values { |v| v.to_nokogiri }
   end
 end
 
