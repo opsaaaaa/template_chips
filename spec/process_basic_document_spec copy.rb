@@ -8,15 +8,9 @@ RSpec.describe Chips do
     it "can be processed" do
       chips_output = Chips::Template::Processor.new(
         template_html,
-        mortises: {
-            'title': '#title',
-            'desc': '#description'
-        },
-        tenons: {
-            'title': 'Hello World!',
-            'desc': 'lorem ipsum'
-        }
-      ).generate()
+        mortises: FakeChip::Basic.mortises,
+        tenons: FakeChip::Basic.tenons
+      ).generate
       
       expect( chips_output.clear_line_spacing ).to eq( output_html )
     end
@@ -29,10 +23,7 @@ RSpec.describe Chips do
             'title': '#bad-title',
             'desc': '#bad-description'
         },
-        tenons: {
-            'title': 'Hello World!',
-            'desc': 'lorem ipsum'
-        }
+        tenons: FakeChip::Basic.tenons
       ).generate()
       
       expect( chips_output.clear_line_spacing ).to eq( template_html )

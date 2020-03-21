@@ -45,6 +45,14 @@ class FakeChip
       ]
     end
   
+    def self.vue
+      return html( 
+        heading: {id: 'title', content: '{{ title }}'}, 
+        paragraph: {id: 'description', content: '{{ desc }}'}
+        )
+    end
+
   end
+
 
 end
