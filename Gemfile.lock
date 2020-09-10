@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    template_chips (0.1.0)
+    template_chips (1.0.0)
+      liquid (~> 4.0, >= 4.0.3)
       nokogiri (>= 1.0)
 
 GEM
@@ -32,7 +33,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.17)
-  liquid (~> 4.0, >= 4.0.3)
   rake (~> 10.0)
   rspec (~> 3.0)
   template_chips!
