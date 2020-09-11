@@ -4,7 +4,7 @@ module ChipsFaker
 
   class Basic
 
-    def self.html h1: '', pg: ''
+    def html h1: '', pg: ''
       "
         <div>
           <h1>
@@ -19,19 +19,19 @@ module ChipsFaker
     end
     
 
-    def self.layout
+    def layout
       html h1: '{{ title }}', pg: '{{ body }}'
     end
 
-    def self.template
+    def template
       { 'title' => 'Title from Template!' }
     end
     
-    def self.document
+    def document
       { 'title' => 'Title from Document!', 'body' => 'lorem ipsium from document' }
     end
 
-    def self.rendered
+    def rendered
       html h1: 'Title from Template!', pg: 'lorem ipsium from document'
     end
   end
