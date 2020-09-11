@@ -1,8 +1,6 @@
 # Template Chips
-<!-- SCOPE -->
-This gem is built to take a template and replace its keys with the specified content.
+    A Template engine Built on liquid
 
-A template should always be html, and the keys should be css identifiers, and the content should be html safe.
 
 ## Installation
 
@@ -18,34 +16,34 @@ $ gem install template_chips
 
 ## Usage
 
+## Examples
 
 ```html
-template_html
+liquid_layout
 ...
 <div>
-    <h1>
-        <div id="title"></div>
-    </h1>
+    <h1>{{ title }}</h1>
 
-    <p>
-        <span id="description"></span>   
-    </p>
+    <p>{{ body }}</p>
+    
+    <p>{{ policy }}</p>
 </div>
 ```
 ```ruby
-chips processor
-...
-output = Chips::Template::Processor.new(
-    template_html,
-    mortises: {
-        'title': '#title',
-        'desc': '#description'
-    },
-    tenons: {
-        'title': 'Hello World!',
-        'desc': 'lorem ipsum'
+    template = {
+        'policy' => 'Standardized policy',
     }
-).generate()
+
+    document = {
+        'title' => 'Hello World!',
+        'body' => 'lorem...'
+        'policy' => 'This will be overridden'
+    }
+```
+
+
+```ruby
+output = Chips::Processor.new( liquid_layout, template, document ).render()
 ```
 
 ```html
@@ -57,10 +55,15 @@ output
     </h1>
 
     <p>
-        lorem ispum   
+        lorem...   
+    </p>
+    
+    <p>
+        Standardized policy  
     </p>
 </div>
 ```
+
 ## Development
 
 TODO: Put something here

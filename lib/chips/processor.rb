@@ -1,21 +1,35 @@
 
 module Chips
   class Processor
-    attr_reader :layout ,:template, :document
+    attr_reader :layout
 
-    def initialize layout: ,template:, document:
-      @layout = Liquid::Template.parse(layout)
-      @template = template
-      @document = document
+    def initialize layout, *content
+      self.layout = layout
+      self.content = content
       return self
     end
 
-    def content
-      @document.merge @template 
+    def render
+      @layout.render @parsed_content 
     end
 
-    def render
-      @layout.render content 
+    def layout=layout
+      @layout = Liquid::Template.parse(layout)
+    end
+    
+    def content=content
+      @content = content
+      @parsed_content = merge( content )
+    end
+    
+    def content
+      @parsed_content
+    end
+
+    private
+
+    def merge(content)
+      {}.merge( *content.reverse )
     end
 
   end
