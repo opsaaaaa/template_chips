@@ -9,8 +9,6 @@ RSpec.describe 'filters' do
       expect( liquid.render(faker.content).clear_line_spacing ).to eq( faker.rendered )
     end
 
-
   end
-
 
 end
