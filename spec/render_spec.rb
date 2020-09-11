@@ -5,12 +5,12 @@ RSpec.describe Chips do
 
     it "can be rendered" do
       doc = Chips::Processor.new(
-        layout: ChipsFaker::Render.layout,
-        template: ChipsFaker::Render.template,
-        document: ChipsFaker::Render.document
+        layout: ChipsFaker::Basic.layout,
+        template: ChipsFaker::Basic.template,
+        document: ChipsFaker::Basic.document
       ).render
       
-      expect( doc ).to eq( ChipsFaker::Render.rendered )
+      expect( doc ).to eq( ChipsFaker::Basic.rendered )
     end
 
   end

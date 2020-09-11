@@ -10,8 +10,12 @@ module Chips
       return self
     end
 
+    def content
+      @document.merge @template 
+    end
+
     def render
-      @layout.render( @document.merge( @template ) )
+      @layout.render content 
     end
 
   end

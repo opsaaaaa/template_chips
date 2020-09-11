@@ -3,7 +3,7 @@
 class ChipsFaker
   class Error < StandardError; end
 
-  module Render
+  module Basic
 
     def self.html h1: '', pg: ''
       "
