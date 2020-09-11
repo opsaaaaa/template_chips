@@ -1,9 +1,8 @@
 
 
-class ChipsFaker
-  class Error < StandardError; end
+module ChipsFaker
 
-  module Basic
+  class Basic
 
     def self.html h1: '', pg: ''
       "
