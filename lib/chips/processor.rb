@@ -3,6 +3,7 @@ module Chips
   class Processor
     attr_reader :layout
 
+    
     def initialize layout, *content
       self.layout = layout
       self.content = content
@@ -12,6 +13,7 @@ module Chips
     def render
       @layout.render @parsed_content 
     end
+
 
     def layout=layout
       @layout = Liquid::Template.parse(layout)
