@@ -1,7 +1,7 @@
 require "bundler/setup"
 require "chips"
 require "string_helper"
-require "layout_html_helper"
+require "helpers/render_faker"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

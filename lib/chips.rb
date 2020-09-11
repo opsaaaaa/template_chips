@@ -1,8 +1,6 @@
-require "chips/version"
-require "nokogiri"
-require "chips/to_nokogiri"
-require "chips/page"
-require "chips/template/processor"
+
+require "liquid"
+require "chips/processor"
 
 
 module Chips
