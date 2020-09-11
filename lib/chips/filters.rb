@@ -1,8 +1,6 @@
 module ChipsFilters
   def markdown(text)
-    Kramdown::Document.new(text).to_html
-    # Kramdown::Document.new('** **')
-    # return "<p>Text: #{text}</p>"
+    Kramdown::Document.new(text, input: 'GFM').to_html
   end
 end
 

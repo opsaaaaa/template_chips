@@ -3,7 +3,7 @@ module Chips
   class Processor
     attr_reader :layout
 
-    
+
     def initialize layout, *content
       self.layout = layout
       self.content = content
