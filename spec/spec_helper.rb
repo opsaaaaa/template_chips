@@ -1,6 +1,6 @@
 require "bundler/setup"
 require "chips"
-require "string_helper"
+require "helpers/string_helper"
 require "helpers/faker_basic"
 
 RSpec.configure do |config|
