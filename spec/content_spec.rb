@@ -1,5 +1,5 @@
 
-RSpec.describe Chips do
+RSpec.describe Chips::Processor do
 
   context "content" do
     let(:faker) { ChipsFaker::Basic.new }

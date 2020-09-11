@@ -1,5 +1,5 @@
 
-RSpec.describe Chips do
+RSpec.describe Chips::Processor do
 
   context "a basic document" do
 

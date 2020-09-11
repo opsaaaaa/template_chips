@@ -1,4 +1,4 @@
-RSpec.describe 'filters' do
+RSpec.describe Chips::Filters do
 
   context "markdown" do
     let(:faker) { ChipsFaker::Markdown.new() }
