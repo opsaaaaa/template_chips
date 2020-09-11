@@ -1,9 +1,9 @@
 
 RSpec.describe Chips do
 
-  context "the content" do
+  context "content" do
 
-    it "is merged correctly" do
+    it "merged correctly on init" do
       merged = ChipsFaker::Basic.document.merge( ChipsFaker::Basic.template )
       chips = Chips::Processor.new(
         '',
@@ -14,5 +14,10 @@ RSpec.describe Chips do
       expect( chips.content ).to eq( merged )
     end
 
+    it "can be added after init"
+
+
   end
+
+
 end
